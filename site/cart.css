@@ -1,0 +1,82 @@
+/*Sets styling for the legend.*/
+legend {
+    background-color: #efefef;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 10px 10px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/*Creates styling for the objects in the field (because they are within the div.)*/
+div {
+    /*border-bottom: 1px solid #efefef;*/
+    margin: 10px;
+    padding-bottom: 5px;
+    width: 200px;
+}
+
+/*Sets styling for the title items (name, email, phone)*/
+.title {
+    float: left;
+    width: 50px;
+    text-align: left;
+    padding-right: 10px;
+}
+
+fieldset {
+    width: 250px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: right;
+}
+
+/*Sets the text style and color.*/
+body {
+    /*font-family: Arial, Verdana, sans-serif;*/
+    font-family: 'Raleway', sans-serif;
+    color: #111111;
+}
+
+/*Sets the table width and a border around it. Also the spacing of the text inside.*/
+table {
+    text-align: center;
+    width: 600px;
+    border: 1px solid #dcdcdc;
+
+}
+
+/*Sets padding around the table heading and data cells*/
+th, td {
+    padding: 7px 10px 10px 10px;
+}
+
+/*Sets styling for the table headings (th)*/
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 1px solid #dcdcdc;
+    /*border-top: 1px solid #999;*/
+    text-align: left;
+}
+
+/*Sets the even table rows a different color*/
+tr.even {
+    background-color: #efefef;
+}
+
+/*Changes the color of the table rows when the mouse hovers over*/
+tr:hover {
+    background-color: #c3e6e5;
+}
+
+#entire-table {
+    text-align: center;
+    margin-left: 20%;
+}
+
+.red-text {
+    color: red;
+}

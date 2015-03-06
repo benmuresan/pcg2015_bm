@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="cart.css" type="test/css" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+<fieldset>
+    <legend>Cart:</legend>
+    <div>
+        <label for="name" class="title">Name:</label>
+        <input type="text" id="name" name="name"/>
+    </div>
+    <div>
+        <label for="email" class="title">Email:</label>
+        <input type="text" id="email" name="email"/>
+    </div>
+    <div>
+        <label for="phone" class="title">Phone:</label>
+        <input type="tel" id="phone" name="phone"/>
+    </div>
+</fieldset>
+<br/>
+<div id="entire-table">
+<table>
+    <tr>
+        <th>Line</th>
+        <th>Qty</th>
+        <th>Product Code</th>
+        <th>Product Description</th>
+        <th>Price Each</th>
+        <th>Subtotal</th>
+        <th>Actions</th>
+    </tr>
+    <tr class="cart-line">
+        <th>1</th>
+        <td class="line-quantity"><input type="number" id="l-1-qty" name="1-qty" value="10"/></td>
+        <td>Obj 3</td>
+        <td>Widget 1</td>
+        <td class="line-price-each">11</td>
+        <td class="line-subtotal">1</td>
+        <td class="red-text line-actions">
+            <a href="#remove">Remove</a>
+        </td>
+    </tr>
+    <tr class="even cart-line">
+        <th>2</th>
+        <td class="line-quantity"><input type="number" id="l-2-qty" name="2-qty" value="20"/></td>
+        <td>Obj 4</td>
+        <td>Widget 2</td>
+        <td class="line-price-each">12</td>
+        <td class="line-subtotal">2</td>
+        <td class="red-text line-actions">
+            <a href="#remove">Remove</a>
+        </td>
+    </tr>
+    <tr class="cart-line">
+        <th>3</th>
+        <td class="line-quantity"><input type="number" id="l-3-qty" name="3-qty" value="30"/></td>
+        <td>Obj 5</td>
+        <td>Widget 3</td>
+        <td class="line-price-each">13</td>
+        <td class="line-subtotal">3</td>
+        <td class="red-text line-actions">
+            <a href="#remove">Remove</a>
+        </td>
+    </tr>
+    <tr class="even cart-line">
+        <th>4</th>
+        <td class="line-quantity"><input type="number" id="l-4-qty" name="4-qty" value="40"/></td>
+        <td>Obj 6</td>
+        <td>Widget 4</td>
+        <td class="line-price-each">14</td>
+        <td class="line-subtotal">4</td>
+        <td class="red-text line-actions">
+            <a href="#remove">Remove</a>
+        </td>
+    </tr>
+    <tr class="cart-line-total">
+        <td colspan="5" align="right">Total: $</td>
+        <td id="cart-total">
+            0
+        </td>
+    </tr>
+</table>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var table = document.getElementById("entire-table");
+        var lines = table.getElementsByClassName("cart-line")
+        var line_count = lines.length;
+            console.log(line_count);
+
+        var getTotal = function () {
+            var total = 0;
+
+            for (var i = 0; i < line_count; i++) {
+                console.log(i);
+                var line = lines[i];
+
+                var qty = line.getElementsByClassName("line-quantity")[0];
+                var quantity = parseFloat(qty.getElementsByTagName("input")[0].value);
+
+                var price = parseFloat(line.getElementsByClassName("line-price-each")[0].innerHTML);
+                var subtotalElement = line.getElementsByClassName("line-subtotal")[0];
+
+                var subTotal = quantity * price;
+                subtotalElement.innerHTML = subTotal;
+                total += subTotal;
+                console.log(subTotal);
+            }
+            var totalElement = document.getElementById("cart-total");
+            totalElement.innerHTML = total;
+        };
+
+        for (var c = 0; c < line_count; c++) {
+            var line = lines[c];
+            var quantityElement = line.getElementsByTagName("input")[0];
+            quantityElement.addEventListener("change", function () {
+                getTotal();
+            });
+        }
+        getTotal();
+    });
+</script>
