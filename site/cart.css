@@ -80,3 +80,8 @@ tr:hover {
 .red-text {
     color: red;
 }
+
+.submit {
+    font-family: 'Raleway', sans-serif;
+    color: red;
+}
