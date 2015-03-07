@@ -52,7 +52,7 @@ th, td {
     padding: 7px 10px 10px 10px;
 }
 
-/*Sets styling for the table headings (th)*/
+/*Sets styling for the table headings. (th)*/
 th {
     text-transform: uppercase;
     letter-spacing: 0.1em;
